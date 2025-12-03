@@ -1,1 +1,27 @@
-hi this git practive
+this what a user got feedback for BTLO EXAM 
+
+
+You have not successfully identified the sending address of the phishing email. Look for emails that show techniques used by malicious actors such as HTML styling, asking users to download attachments or click links.
+You have not successfully identified the file downloaded to Florence's machine. You can look at the phishing URL and confirm the findings by looking at the Downloads folder.
+You have not successfully identified files that could be related to the attacker gaining further access into the target environment. File names and extensions can give away what their contents are.
+You have not successfully identified unexpected countries that have made connections to the environment. Some dashboard panels are interactive and allow you to hover your mouse over certain sections to show more information. VPN logs also typically include a country code for the originating connection, or the source IP can be used in a WHOis search to find the associated country.
+You have not correctly identified logs showing outbound traffic to a malicious IP. Simply searching for the IP address will show all logs that contain this string. From here we can look at logs where the IP is in the DestinationIP field and sort by UtcTime field.
+You have not correctly identified the file and destination port involved in C2 beaconing. Searching for the malicious IP we can see associated events. We then can look at the 'Image' value to see what file is generating the connection, and the 'DestinationPort' field to see the port.
+You have not successfully identified the file that has been created by the initial malicious file. An easy way to identify this is to look for Sysmon logs that contain 'cmdline' and the original filename.
+You have unsuccessfully identified the SID string associated with an account under investigation. This can be retrieved from Windows Event Logs where the account is the target. These logs can either be checked locally or via SIEM.
+You have not successfully identified the start time of a network scan. Provided with the type of scan and the source address, we can use these to filter traffic in Wireshark. You could also look in Statistics > Conversations to see the source IP communicate with a number of other IPs on a range of ports.
+You have failed to identify the timestamp of a suspicious RDP connection, and the user that was logged in. With Windows Event logs we can look for 4624's that are related to successful logon, and then look for logon type 3 which shows a network logon. There is a log property called 'TargetUsername' that tells us which account is trying to be logged into.
+You have failed to identify the timestamp of a suspicious RDP connection, and the user that was logged in. With Windows Event logs we can look for 4624's that are related to successful logon, and then look for logon type 3 which shows a network logon. There is a log property called 'TargetUsername' that tells us which account is trying to be logged into.
+You have not successfully identified FTP authentication traffic that shows the plaintext credentials attempted for login. Using Wireshark you can filter on FTP traffic using "ftp" and then look for authentication attempts.
+You have not correctly identified the registry key that was used for persistence. A good way to find these changes are to look for regmod events in the SIEM.
+You have unsuccessfully retrieved a port used in a bind shell for persistence. When investigating suspicious registry keys look at the data values held within, as these can disclose commands and file execution.
+You have unsuccessfully identified the domain and port that a malicious file is communicating on. One way to retrieve this information would be looking at destination domains in the SIEM and linking it to the name of the suspicious file to confirm they are related.
+You have unsuccessfully identified a staging folder. These folders are used by actors to store tools for execution or files for exfiltration to make it move convenient. If you come across any folders that contain unexpected folders, this may be evidence of a staging location.
+You have unsuccessfully identified the name of a file that is actually an offensive tool, but was simply renamed in an attempt to avoid detection. If the attacker has executed this tool, then the command-line arguments may still include the tool's name if it is within the executed code. This can be found in Sysmon logs that feature the string of the tool name, then looking for which file has run those commands.
+You have unsuccessfully identified a configuration file related to malicious software which contains information that could be used for attribution. Installed software will likely have an associated folder in Program Files or AppData within the specific user's file structure.
+You have unsuccessfully provided the number of unique (non duplicate) sensitive files exfiltrated by the attacker. Looking in the staging location, you need to count the number of files that contain sensitive information.
+
+
+
+where all he went wrong?
+
